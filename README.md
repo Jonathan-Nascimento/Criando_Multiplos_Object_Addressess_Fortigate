@@ -1,6 +1,6 @@
 ### Descrição do Script
 
-Este repositório contém um script em Bash para configuração de endereços FQDN em um firewall FortiGate e a criação de um grupo de endereços que inclua esses FQDNs.
+Este repositório contém um script em Bash para configuração de de múltiplos endereços FQDN em um firewall FortiGate e a criação de um grupo de endereços que inclua esses FQDNs.
 
 #### Funcionalidade
 
