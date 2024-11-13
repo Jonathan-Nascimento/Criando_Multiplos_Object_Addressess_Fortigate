@@ -48,7 +48,7 @@ O script realiza as seguintes ações:
    ```
 2. Execute o script:
    ```bash
-   ./nome_do_script.sh
+   ./Gera_object-Addresses.sh
    ```
 
 Este script automatiza a configuração de múltiplos endereços FQDN e a criação de grupos no FortiGate, facilitando a gestão de políticas baseadas em domínios.
