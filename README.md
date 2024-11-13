@@ -32,7 +32,6 @@ O script realiza as seguintes ações:
    - Para cada entrada, cria uma configuração de endereço no FortiGate com:
      - `type fqdn`: Define o tipo como FQDN.
      - `fqdn`: Define o FQDN com o valor especificado no CSV.
-     - `associated-interface`: Associa o endereço à interface `npu_vlink1_3000`.
      - `color`: Define uma cor para visualização (neste caso, `10`).
   
 2. **Configuração do Grupo de Endereços**:
