@@ -2,6 +2,27 @@
 
 Este repositório contém um script em Bash para configuração de de múltiplos endereços FQDN em um firewall FortiGate e a criação de um grupo de endereços que inclua esses FQDNs.
 
+
+### Pré-requisitos 
+
+    Git - Instalado
+    Ambiente - Linux/macOS
+    Conhecimento - Básico de linha de comando
+
+### Instalação
+
+* Clone o repositório:
+
+``` bash    
+$ git clone https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate.git
+```
+
+* Navegue até o diretório:
+
+``` bash
+$ cd Criando_Multiplos_Object_Addressess_Fortigate
+``` 
+
 #### Funcionalidade
 
 O script realiza as seguintes ações:
