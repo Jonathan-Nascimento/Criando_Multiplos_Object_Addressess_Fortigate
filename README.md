@@ -105,12 +105,6 @@ Execute o script para criar as configurações do grupo:
 
 ---
 
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
-
 Dúvidas ou sugestões? Entre em contato através do [GitHub Issues](https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate/issues).
 
 --- 
