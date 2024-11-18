@@ -1,53 +1,118 @@
-### Descrição do Script
+# Script para Configuração de Múltiplos Endereços FQDN no FortiGate
 
-Este repositório contém um script em Bash para configuração de de múltiplos endereços FQDN em um firewall FortiGate e a criação de um grupo de endereços que inclua esses FQDNs.
+Este repositório contém um script em Bash para facilitar a configuração de múltiplos endereços FQDN em firewalls FortiGate e a criação de grupos de endereços contendo esses FQDNs.
 
+---
 
-### Pré-requisitos 
+## 📋 Descrição
 
-    Git - Instalado
-    Ambiente - Linux/macOS
-    Conhecimento - Básico de linha de comando
+O script automatiza a criação de configurações no FortiGate, permitindo:
 
-### Instalação
+1. **Configuração de Endereços FQDN**: 
+   - Gera comandos para adicionar múltiplos endereços FQDN a partir de um arquivo CSV.
+   
+2. **Criação de Grupo de Endereços**:
+   - Agrupa os endereços criados em um único grupo para simplificar a gestão de políticas.
 
-* Clone o repositório:
+---
 
-``` bash    
-$ git clone https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate.git
+## ✅ Pré-requisitos
+
+- **Git**: Deve estar instalado.
+- **Sistema Operacional**: Linux ou macOS.
+- **Conhecimento Básico**: Familiaridade com linha de comando e configuração de firewalls FortiGate.
+
+---
+
+## 🚀 Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate.git
+   ```
+
+2. Navegue até o diretório:
+
+   ```bash
+   cd Criando_Multiplos_Object_Addressess_Fortigate
+   ```
+
+---
+
+## ⚙️ Funcionalidades
+
+### 1. **Configuração de Endereços FQDN**
+- Lê o arquivo `Endereco_FQDN.csv` contendo entradas no formato:  
+  `nome_do_endereco,fqdn`.
+
+- Para cada entrada, o script gera comandos para criar:
+  - **Tipo**: `fqdn`
+  - **FQDN**: Especificado no arquivo CSV.
+  - **Cor**: Configuração visual, valor padrão `10`.
+
+### 2. **Criação de Grupo de Endereços**
+- Utiliza o mesmo arquivo CSV para identificar os nomes dos endereços.
+- Gera comandos para criar um grupo chamado `meu_grupo_fqdn`, contendo todos os endereços.
+
+---
+
+## 💡 Exemplo de Uso
+
+### 1. Preparação do Arquivo CSV
+Crie ou edite o arquivo `Endereco_FQDN.csv` no seguinte formato:
+
+```csv
+nome_do_endereco1,exemplo1.com
+nome_do_endereco2,exemplo2.com
 ```
 
-* Navegue até o diretório:
+### 2. Gerar Configurações de Endereços
+Execute o script:
 
-``` bash
-$ cd Criando_Multiplos_Object_Addressess_Fortigate
-``` 
+```bash
+./Gera_object-Addresses.sh
+```
 
-#### Funcionalidade
+### 3. Aplicar Configurações no FortiGate
+- Acesse a CLI do FortiGate e entre no modo de configuração de endereços:
+  ```bash
+  config firewall address
+  ```
+- Copie o conteúdo do arquivo `config_firewall_address.conf` e cole na CLI.
 
-O script realiza as seguintes ações:
+### 4. Gerar Configurações do Grupo
+Execute o script para criar as configurações do grupo:
 
-1. **Configuração de Endereços FQDN**:
-   - Lê um arquivo CSV (`Endereco_FQDN.csv`) contendo uma lista de endereços no formato `nome,fqdn`.
-   - Para cada entrada, cria uma configuração de endereço no FortiGate com:
-     - `type fqdn`: Define o tipo como FQDN.
-     - `fqdn`: Define o FQDN com o valor especificado no CSV.
-     - `color`: Define uma cor para visualização (neste caso, `10`).
-  
-2. **Configuração do Grupo de Endereços**:
-   - Lê o mesmo arquivo CSV (`Endereco_FQDN.csv`), porém considera apenas o nome dos endereços (primeiro campo) para incluí-los em um grupo de endereços.
-   - Cria um grupo chamado `meu_grupo_fqdn` no FortiGate, adicionando todos os endereços em uma única linha para facilitar a visualização e manutenção.
-  
-#### Exemplo de Uso
+```bash
+./Gerar_addrgrp.sh
+```
 
-1. Prepare o arquivo CSV `Endereco_FQDN.csv` no formato:
-   ```csv
-   nome_do_endereco1,exemplo.com
-   nome_do_endereco2,exemplo2.com
-   ```
-2. Execute o script:
-   ```bash
-   ./Gera_object-Addresses.sh
-   ```
+### 5. Aplicar o Grupo no FortiGate
+- Acesse a configuração de grupos no FortiGate:
+  ```bash
+  config firewall addrgrp
+  ```
+- Abra o arquivo `config_firewall_addrgrp.conf`, edite o nome `meu_grupo_fqdn` conforme necessário e copie as configurações para a CLI.
 
-Este script automatiza a configuração de múltiplos endereços FQDN e a criação de grupos no FortiGate, facilitando a gestão de políticas baseadas em domínios.
+---
+
+## 🛠️ Benefícios
+
+- **Automação**: Reduz o tempo necessário para configurar múltiplos endereços e grupos.
+- **Consistência**: Evita erros manuais na configuração.
+- **Flexibilidade**: Fácil adaptação para diferentes cenários e ambientes.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Dúvidas ou sugestões? Entre em contato através do [GitHub Issues](https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate/issues).
+
+--- 
+
+Com essa versão, o README.md fica mais organizado, informativo e visualmente amigável. 🚀
