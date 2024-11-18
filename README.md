@@ -107,6 +107,3 @@ Execute o script para criar as configurações do grupo:
 
 Dúvidas ou sugestões? Entre em contato através do [GitHub Issues](https://github.com/Jonathan-Nascimento/Criando_Multiplos_Object_Addressess_Fortigate/issues).
 
---- 
-
-Com essa versão, o README.md fica mais organizado, informativo e visualmente amigável. 🚀
