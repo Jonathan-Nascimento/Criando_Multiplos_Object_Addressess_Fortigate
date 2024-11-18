@@ -67,28 +67,22 @@ nome_do_endereco1,exemplo1.com
 nome_do_endereco2,exemplo2.com
 ```
 
-### 2. Gerar Configurações de Endereços
+### 2. Gerar Configurações de Endereços e Grupo.
 Execute o script:
 
 ```bash
 ./Gera_object-Addresses.sh
 ```
 
-### 3. Aplicar Configurações no FortiGate
+### 3. Aplicar Configurações no FortiGate.
 - Acesse a CLI do FortiGate e entre no modo de configuração de endereços:
   ```bash
   config firewall address
   ```
 - Copie o conteúdo do arquivo `config_firewall_address.conf` e cole na CLI.
 
-### 4. Gerar Configurações do Grupo
-Execute o script para criar as configurações do grupo:
 
-```bash
-./Gerar_addrgrp.sh
-```
-
-### 5. Aplicar o Grupo no FortiGate
+### 4. Aplicar o Grupo no FortiGate.
 - Acesse a configuração de grupos no FortiGate:
   ```bash
   config firewall addrgrp
